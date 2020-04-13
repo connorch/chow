@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "841899042646",
+    "firebase_url": "https://chow-fe2d9.firebaseio.com",
+    "project_id": "chow-fe2d9",
+    "storage_bucket": "chow-fe2d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841899042646:android:dc84b94c1963ca46f9d8f7",
+        "android_client_info": {
+          "package_name": "tech.shinelabs.chow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841899042646-eu9t2un4qh4127m0n3s00m37501mc6rj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tech.shinelabs.chow",
+            "certificate_hash": "d27f478e90d11dafd22f7ccde324ceaabc524b8f"
+          }
+        },
+        {
+          "client_id": "841899042646-p3vflm4jbu454sjqkpt01n7jqa4qmcir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGJlrU2Zjc-I9qUv84uCr_PPkEJbYDPBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841899042646-p3vflm4jbu454sjqkpt01n7jqa4qmcir.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "841899042646-70v62nm0l35ncpvalr1j64ihr6g9m1jq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "tech.shinelabs.chow"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
