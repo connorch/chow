@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
 
-        //NOTE FROM CHEVLI - THESE COLORS ARE GOING TO CHANGE - HAVEN'T SPENT TIME SOLIDIFYING THE COLOR PALLETE
+        //NOTE FROM CHEVLI - THESE COLORS ARE GOING TO CHANGE - I HAVEN'T SPENT TIME SOLIDIFYING THE COLOR PALLETE
         primaryColor: Constants.CHOW_COLOR_GREEN,
         accentColor: Constants.CHOW_COLOR_DARK_BROWN,
         textTheme: TextTheme(bodyText1: TextStyle(color: Constants.CHOW_COLOR_DARK_BROWN)),
@@ -56,7 +56,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _leftNavTab = "home";
+  String _selectedLeftDrawerTab = "home";
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -67,16 +68,66 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
-        leading: Icon(
-          Icons.menu
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          tooltip: 'Open Menu',
+          onPressed: () {
+            _scaffoldKey.currentState.openDrawer();
+          }
         )
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text(
+                'Drawer Header',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('Profile'),
+            ),
+            ListTile(
+              leading: Icon(Icons.grade),
+              title: Text('Deals'),
+            ),
+            ListTile(
+              leading: Icon(Icons.view_list),
+              title: Text('Orders'),
+            ),
+            ListTile(
+              leading: Icon(Icons.notifications),
+              title: Text('Notifications'),
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text('Logout'),
+            ),
+          ],
+        ),
+      ),
       body: 
-          _leftNavTab == "home" ?
+          // Conditionally render the selected tab on the left page.  Defaults to the home page (with the map).
+          // Probably make this a switch when we add more pages.
+          _selectedLeftDrawerTab == "home" ?
             SlidingUpPanel(
               panel: Center(
                 child: Text("This is the sliding Widget"),
