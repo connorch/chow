@@ -5,5 +5,5 @@ import 'package:flutter/material.dart';
 const String SOME_MESSAGE = "some message";
 
 // COLOR SCHEME
-Color CHOW_COLOR_GREEN = Colors.lightGreen[600];
-Color CHOW_COLOR_DARK_BROWN = Colors.brown[900];
+final kChowGreenColor = Colors.lightGreen.shade600;
+final kChowBrownColor = Colors.brown.shade900;
